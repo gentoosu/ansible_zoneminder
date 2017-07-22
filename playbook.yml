@@ -18,6 +18,9 @@
       path: /etc/apache2/apache2.conf
 #      regexp: '^ServerName'
       line: 'ServerName 10.0.0.105'
+      backup: yes
+      insertafter: EOF
+
 
   - name: Install MySQL
     apt:
