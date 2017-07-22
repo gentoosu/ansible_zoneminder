@@ -66,3 +66,13 @@
       group: www-data
       recurse: yes
     
+  - name: Enable apache modules
+    apache2_module:
+      state: present
+      name: "{{ item }}"
+    with_items:
+      - cgi
+      - rewrite
+
+  - name: Enable zoneminder config
+    command: a2enconf zoneminder
