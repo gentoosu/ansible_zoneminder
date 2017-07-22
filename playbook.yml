@@ -48,4 +48,3 @@
   - name: Add zoneminder repository
     apt-repository:
       repo: 'ppa:iconnor/zoneminder'
-      state: present
