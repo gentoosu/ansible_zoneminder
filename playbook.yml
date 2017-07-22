@@ -58,3 +58,11 @@
     with_items:
       - www-data
       - video
+
+  - name: Change ownersship of zm dir to www-data
+    file:
+      path: /usr/share/zoneminder/
+      owner: www-data
+      group: www-data
+      recurse: yes
+    
