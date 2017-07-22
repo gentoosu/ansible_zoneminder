@@ -46,3 +46,8 @@
   - name: Add zoneminder repository
     apt_repository:
       repo: 'ppa:iconnor/zoneminder'
+
+  - name: Install Zoneminder
+    apt:
+      name: zoneminder
+      state: installed
