@@ -25,6 +25,33 @@
     apt:
       name: mysql-server
       state: installed
+  
+  - name: Enable and start mysql
+    systemd:
+      name: mysqld
+      state: started
+      enabled: True
+
+#
+# Do a secure install with ansible
+#
+
+  - name: Set mysql root password
+    mysql_user: 
+      name: root 
+      host: localhost 
+      password: password
+  
+  - name: Remove anon users
+    mysql_user:
+      name: ''
+      host: localhost
+      state: absent
+
+  - name: Remove test db
+    mysql_db:
+      name: test
+      state: absent
 
   - name: Install PHP
     apt:
@@ -82,4 +109,4 @@
       name: zoneminder
       state: started
       enabled: True
-    
+  
