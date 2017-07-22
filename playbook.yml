@@ -43,6 +43,6 @@
       line: "DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm"
       backup: yes
 
-  - name: Add zoneminder repository
-    apt-repository:
-      repo: 'ppa:iconnor/zoneminder'
+#  - name: Add zoneminder repository
+#    apt-repository:
+#      repo: 'ppa:iconnor/zoneminder'
