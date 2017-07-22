@@ -1,0 +1,25 @@
+---
+
+- hosts: localhost
+
+  tasks:
+
+  - name: Run apt upgrade
+    apt:
+      upgrade: yes
+
+  - name: Install Apache2
+    apt:
+      name: apache2
+      state: installed
+
+  - name: Set ServerName in apache2.conf
+    lineinfile:
+      path: /etc/apache2/apache2.conf
+      regexp: '^ServerName'
+      line: 'ServerName 10.0.0.105'
+
+  - name: Install MySQL
+    apt:
+      name: mysql-server
+      state: installed
