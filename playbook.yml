@@ -30,8 +30,8 @@
     apt: 
       name: {{ item }}
       state: installed
-      with_items:
-        - php
-        - libapache2-mod-php 
-        - php-mcrypt 
-        - php-mysql
+    with_items:
+      - php
+      - libapache2-mod-php 
+      - php-mcrypt 
+      - php-mysql
