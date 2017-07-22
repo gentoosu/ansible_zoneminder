@@ -25,6 +25,7 @@
     apt:
       name: mysql-server
       state: installed
+    register: mysql
   
   - name: Enable and start mysql
     systemd:
@@ -46,13 +47,16 @@
       - 127.0.0.1
       - ::1
       - localhost
+    when: not mysql|skipped
+    
+
 
   - name: Remove anon users
     mysql_user:
       name: ''
       host: "{{ item }}" 
       state: absent
-      login_password: password
+      login_password: "password"
     with_items:
       - localhost
       - $ansible_hostname
