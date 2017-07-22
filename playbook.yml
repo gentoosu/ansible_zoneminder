@@ -51,3 +51,10 @@
     apt:
       name: zoneminder
       state: installed
+
+  - name: Add www-data and video user
+    user:
+      name: "{{ item }}"
+    with_items:
+      - www-data
+      - video
