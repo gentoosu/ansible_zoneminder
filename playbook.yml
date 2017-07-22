@@ -28,9 +28,9 @@
 
   - name: Install PHP
     apt: 
-      name: {{ item }}
+      name: {{ items }}
       state: installed
-    with_items:
+    with_item:
       - php
       - libapache2-mod-php 
       - php-mcrypt 
