@@ -28,7 +28,7 @@
 
   - name: Install PHP
     apt: 
-      name: "{{ items }}""
+      name: "{{ items }}"
       state: installed
     with_items:
       - php
