@@ -42,3 +42,10 @@
       regexp: "^DirectoryIndex"
       line: "DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm"
       backup: yes
+
+#  - name: Enable and Start Apache
+    
+  - name: Add zoneminder repository
+    apt-repository:
+      repo: ppa:iconnor/zoneminder
+      state: present
