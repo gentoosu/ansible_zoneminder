@@ -65,6 +65,7 @@
     mysql_db:
       name: test
       state: absent
+      login_password: "password"
 
   - name: Install PHP
     apt:
