@@ -21,8 +21,17 @@
       backup: yes
       insertafter: EOF
 
-
   - name: Install MySQL
     apt:
       name: mysql-server
       state: installed
+
+  - name: Install PHP
+    apt: 
+      name: {{ item }}
+      state: installed
+      with_items:
+        - php
+        - libapache2-mod-php 
+        - php-mcrypt 
+        - php-mysql
