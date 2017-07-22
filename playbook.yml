@@ -76,3 +76,10 @@
 
   - name: Enable zoneminder config
     command: a2enconf zoneminder
+
+  - name: Enable and start Zoneminder
+    systemd:
+      name: zoneminder
+      state: started
+      enabled: True
+    
