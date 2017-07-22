@@ -47,7 +47,7 @@
       - 127.0.0.1
       - ::1
       - localhost
-    when: not mysql|skipped
+    when: mysql|changed
     
 
 
